@@ -1,0 +1,6 @@
+2022-05-02 00:46:49,043 [logging_par.py:45 -                 info()] application start at 2022-05-01 16:46:49.043070
+2022-05-02 00:46:49,043 [logging_par.py:51 -            exception()] invalid literal for int() with base 10: 'abc'
+Traceback (most recent call last):
+  File "C:/job/learning/pythonProject/venv/learn/logging/log_高级应用_参数文件/类/logging_par.py", line 71, in <module>
+    int(a)
+ValueError: invalid literal for int() with base 10: 'abc'

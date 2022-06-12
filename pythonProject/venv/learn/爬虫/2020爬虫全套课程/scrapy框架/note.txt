@@ -1,0 +1,43 @@
+scrapy框架
+-什么是框架
+    -就是一个集成了很多功能并且具有很强通用性的一个项目模板
+-如何学习框架
+    -专门学习框架封装的各种功能的详细用法
+-什么是scrapy
+    -爬虫中封装好的一个明星框架.功能:高性能的持久化存储,异步的数据下载,高性能的数据解析,分布式
+-srcapy框架的基本使用
+    -环境的安装:
+        -mac or linux :pip install scrapy
+        -win : twisted pywin32 scrapy
+    -创建一个工程:srcapy startproject xxxPro
+    -cd xxxPro
+    -在spiders子目录中创建一个爬虫文件
+         #这个www.xxx.com 这个url在创建的时候可以先随意定义,脚本中可以重新指定
+        -scrapy genspider spiderName www.xxx.com
+    -执行工程:
+        -scrapy crawl spiderName
+        -scrapy crawl spiderName --nolog    #不打印日志(错误的也不会输出)
+-scrapy 数据解析
+
+-scrapy持久化存储
+    -基于终端指令:
+        -要求:只可以将paras方法的返回值存储到本地的文本文件中
+        -注意:持久化存储对应的文本文件的类型只可以为'json', 'jsonlines', 'jl', 'csv', 'xml', 'marshal', 'pickle'
+        -指令:scrapy crawl spiderName -o  filePath
+        -好处:简洁高效便捷
+        -缺点:局限性比较强(数据只可以存储到指定后缀的文本文件中)
+    -基于管道:
+        -编码流程:
+            -数据解析
+            -在item类中定义相关的属性
+            -将解析的数据封装存储到item类型的对象中
+            -将item类型的对象提交给管道进行持久化存储的操作
+            -在管道类的process_item中要将其接收到的item对象中存储的数据进行持久化存储操作
+            -在配置文件中开启管道
+        -好处:
+            -通用性强
+
+        -将爬取的数据存一份本地,一份存数据库
+            -管道文件中的一个管道类对应的是将数据存储到一种平台
+            -爬虫文件提交的item指挥给管道文件中第一个被执行的管道类接受
+            -process_item 中的 return item 表示将item传递给下一个即将被执行的管道类
