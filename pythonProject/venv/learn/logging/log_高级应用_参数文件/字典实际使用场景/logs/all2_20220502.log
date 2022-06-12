@@ -1,8 +1,0 @@
-[2022-05-02 00:24:53,433][MainThread:16300][task_id:logging_dict_conf][logging_dict_conf.py:88][INFO][It works!]
-[2022-05-02 00:24:53,434][MainThread:16300][task_id:your_app_name][test_dict_conn.py:17][ERROR][division by zero]
-Traceback (most recent call last):
-  File "C:/job/learning/pythonProject/venv/learn/logging/log_高级应用_参数文件/字典实际使用场景/test_dict_conn.py", line 15, in test1
-    print(1 / 0)
-ZeroDivisionError: division by zero
-[2022-05-02 00:28:47,803][MainThread:24728][task_id:logging_dict_conf][logging_dict_conf.py:88][INFO][It works!]
-[2022-05-02 00:29:06,726][MainThread:8920][task_id:logging_dict_conf][logging_dict_conf.py:88][INFO][It works!]
